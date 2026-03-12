@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(83, 216, 106, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(85, 130, 255, 0.15), transparent 28%),
+    linear-gradient(135deg, #08101d 0%, #111a30 55%, #0c1224 100%);
+  min-height: 100vh;
+  color: #f4f7fb;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: 28px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.brand {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.logo {
+  width: 115px;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 24px;
+  margin-bottom: 12px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.brand p {
+  margin: 8px 0 0;
+  color: #a8b0c2;
+  font-size: 14px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #d9deef;
+}
+
+.field input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  outline: none;
+  font-size: 14px;
+}
+
+.field input::placeholder {
+  color: #96a0b8;
+}
+
+.password-wrap {
+  display: flex;
+  gap: 8px;
+}
+
+.password-wrap input {
+  flex: 1;
+}
+
+.password-wrap button {
+  min-width: 68px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-primary,
+.btn-secondary {
+  border: none;
+  border-radius: 18px;
+  padding: 15px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #61f087, #2db95d);
+  color: #08110b;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.message {
+  min-height: 20px;
+  margin: 0;
+  font-size: 13px;
+  text-align: center;
+  color: #ffd98d;
+}
