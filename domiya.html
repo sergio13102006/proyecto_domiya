@@ -10,81 +10,269 @@
 <body>
   <div class="dashboard">
     <aside class="sidebar">
-      <div class="sidebar-brand">
-        <img src="logodomiya.jpg" alt="Logo Domiya" class="sidebar-logo" />
-        <h2>DOMIYA</h2>
-        <p>Panel de dueños</p>
-      </div>
+      <div class="sidebar-top">
+        <div class="sidebar-brand">
+          <div class="sidebar-logo-wrap">
+            <img src="logodomiya.jpg" alt="Logo Domiya" class="sidebar-logo" />
+          </div>
+          <div>
+            <h2>DOMIYA</h2>
+            <p>Panel de propietarios</p>
+          </div>
+        </div>
 
-      <nav class="menu">
-        <button class="menu-btn active" data-section="resumen">Resumen</button>
-        <button class="menu-btn" data-section="mapa">Mapa</button>
-        <button class="menu-btn" data-section="personal">Personal</button>
-      </nav>
+        <div class="sidebar-status">
+          <span class="status-dot"></span>
+          <div>
+            <strong>Operación activa</strong>
+            <small>Monitoreo en tiempo real</small>
+          </div>
+        </div>
+
+        <nav class="menu">
+          <button class="menu-btn active" data-section="resumen">
+            <span>Resumen</span>
+            <small>Vista general</small>
+          </button>
+          <button class="menu-btn" data-section="mapa">
+            <span>Mapa</span>
+            <small>Operación en vivo</small>
+          </button>
+          <button class="menu-btn" data-section="personal">
+            <span>Personal</span>
+            <small>Equipo y estados</small>
+          </button>
+        </nav>
+      </div>
 
       <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
     </aside>
 
     <main class="content">
       <header class="topbar">
-        <div>
-          <p class="eyebrow">Operación en tiempo real</p>
+        <div class="topbar-copy">
+          <p class="eyebrow">Control operativo inteligente</p>
           <h1>Hola, <span id="ownerName">Dueño</span></h1>
+          <p class="topbar-text">
+            Supervisa repartidores, zonas activas y cobertura desde un solo lugar.
+          </p>
+        </div>
+
+        <div class="topbar-badges">
+          <span class="top-chip success">12 activos</span>
+          <span class="top-chip">3 zonas cubiertas</span>
+          <span class="top-chip muted" id="liveStatus">Actualizado hace 10 s</span>
         </div>
       </header>
 
       <section id="resumen" class="panel-section active">
         <div class="hero-card">
-          <small>Estado general</small>
-          <h3>Todo bajo control</h3>
-          <p>
-            Revisa rápidamente quién está activo, cuántas zonas están cubiertas
-            y entra al mapa operativo.
-          </p>
+          <div class="hero-copy">
+            <span class="hero-tag">Estado general</span>
+            <h3>La operación está estable y bajo control</h3>
+            <p>
+              Visualiza el estado del personal, revisa la cobertura por zonas y
+              entra al mapa para seguir la operación en tiempo real.
+            </p>
+          </div>
+
+          <div class="hero-side">
+            <div class="hero-mini-card">
+              <strong>91%</strong>
+              <span>Eficiencia hoy</span>
+            </div>
+            <div class="hero-mini-card">
+              <strong>24 min</strong>
+              <span>Promedio entrega</span>
+            </div>
+          </div>
         </div>
 
         <div class="stats">
-          <div class="card stat-card">
+          <article class="card stat-card">
+            <div class="stat-top">
+              <span class="stat-label">Domiciliarios activos</span>
+              <span class="stat-trend up">+8%</span>
+            </div>
             <strong>12</strong>
-            <span>Activos</span>
-          </div>
-          <div class="card stat-card">
+            <p>Cobertura operativa estable en las zonas principales.</p>
+          </article>
+
+          <article class="card stat-card">
+            <div class="stat-top">
+              <span class="stat-label">En pausa</span>
+              <span class="stat-trend neutral">Sin cambios</span>
+            </div>
             <strong>4</strong>
-            <span>En pausa</span>
-          </div>
-          <div class="card stat-card">
+            <p>Personal temporalmente desconectado o fuera de ruta.</p>
+          </article>
+
+          <article class="card stat-card">
+            <div class="stat-top">
+              <span class="stat-label">Zonas activas</span>
+              <span class="stat-trend up">Cobertura total</span>
+            </div>
             <strong>3</strong>
-            <span>Zonas</span>
+            <p>Norte, Centro y Sur con seguimiento continuo.</p>
+          </article>
+        </div>
+
+        <div class="summary-grid">
+          <div class="card">
+            <div class="section-head">
+              <h3>Rendimiento rápido</h3>
+              <span class="chip">Hoy</span>
+            </div>
+
+            <div class="mini-metrics">
+              <div class="mini-metric">
+                <span>Entregas completadas</span>
+                <strong>148</strong>
+              </div>
+              <div class="mini-metric">
+                <span>Tiempo medio</span>
+                <strong>24 min</strong>
+              </div>
+              <div class="mini-metric">
+                <span>Incidencias</span>
+                <strong>02</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="section-head">
+              <h3>Actividad reciente</h3>
+              <span class="chip">En vivo</span>
+            </div>
+
+            <div class="activity-list">
+              <div class="activity-item">
+                <span class="activity-dot green"></span>
+                <p><strong>Carlos Ruiz</strong> tomó una orden en Zona Norte.</p>
+              </div>
+              <div class="activity-item">
+                <span class="activity-dot blue"></span>
+                <p><strong>Luisa Mora</strong> finalizó una entrega en Centro.</p>
+              </div>
+              <div class="activity-item">
+                <span class="activity-dot red"></span>
+                <p><strong>Pedro Gil</strong> quedó fuera de línea.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="mapa" class="panel-section">
         <div class="card map-card">
-          <div class="section-head">
-            <h3>Mapa operativo</h3>
-            <span class="chip">Actualizado hace 10 s</span>
+          <div class="section-head map-head">
+            <div>
+              <h3>Mapa operativo</h3>
+              <p class="section-subtext">
+                Seguimiento visual del personal y estado por zona.
+              </p>
+            </div>
+
+            <div class="map-actions">
+              <span class="chip">Tiempo real</span>
+              <span class="chip chip-dark" id="mapUpdatedAt">Actualizado hace 10 s</span>
+            </div>
           </div>
 
-          <div class="fake-map">
-            <div class="road road-1"></div>
-            <div class="road road-2"></div>
-            <div class="road road-3"></div>
+          <div class="map-layout">
+            <div class="fake-map">
+              <div class="map-grid"></div>
+              <div class="district district-1">Zona Norte</div>
+              <div class="district district-2">Centro</div>
+              <div class="district district-3">Zona Sur</div>
 
-            <div class="pin pin-1">
-              <span></span>
-              <label>Carlos</label>
+              <div class="road road-1"></div>
+              <div class="road road-2"></div>
+              <div class="road road-3"></div>
+              <div class="road road-4"></div>
+
+              <div class="route route-1"></div>
+              <div class="route route-2"></div>
+
+              <div class="hub hub-1">Base</div>
+              <div class="hub hub-2">Punto</div>
+
+              <div class="pin pin-1">
+                <span></span>
+                <label>Carlos</label>
+              </div>
+
+              <div class="pin pin-2">
+                <span></span>
+                <label>Luisa</label>
+              </div>
+
+              <div class="pin pin-3 offpin">
+                <span></span>
+                <label>Pedro</label>
+              </div>
+
+              <div class="pulse pulse-1"></div>
+              <div class="pulse pulse-2"></div>
             </div>
 
-            <div class="pin pin-2">
-              <span></span>
-              <label>Luisa</label>
-            </div>
+            <aside class="map-sidepanel">
+              <div class="map-info-card">
+                <h4>Resumen del mapa</h4>
+                <div class="legend">
+                  <div class="legend-item">
+                    <span class="legend-dot active"></span>
+                    <span>Activo</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-dot offline"></span>
+                    <span>Inactivo</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-dot route"></span>
+                    <span>Ruta estimada</span>
+                  </div>
+                </div>
+              </div>
 
-            <div class="pin pin-3 offpin">
-              <span></span>
-              <label>Pedro</label>
-            </div>
+              <div class="map-info-card">
+                <h4>Zonas</h4>
+                <div class="zone-item">
+                  <div>
+                    <strong>Norte</strong>
+                    <small>4 domiciliarios</small>
+                  </div>
+                  <span class="pill active">Alta</span>
+                </div>
+                <div class="zone-item">
+                  <div>
+                    <strong>Centro</strong>
+                    <small>5 domiciliarios</small>
+                  </div>
+                  <span class="pill active">Alta</span>
+                </div>
+                <div class="zone-item">
+                  <div>
+                    <strong>Sur</strong>
+                    <small>3 domiciliarios</small>
+                  </div>
+                  <span class="pill off">Media</span>
+                </div>
+              </div>
+
+              <div class="map-info-card">
+                <h4>Alertas</h4>
+                <div class="alert-item">
+                  <span class="alert-mark"></span>
+                  <p>Pedro Gil lleva 12 min sin actividad.</p>
+                </div>
+                <div class="alert-item">
+                  <span class="alert-mark green"></span>
+                  <p>Cobertura completa en zona Centro.</p>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -92,7 +280,10 @@
       <section id="personal" class="panel-section">
         <div class="card">
           <div class="section-head">
-            <h3>Personal conectado</h3>
+            <div>
+              <h3>Personal conectado</h3>
+              <p class="section-subtext">Equipo visible en la operación actual.</p>
+            </div>
             <span class="chip">12 activos</span>
           </div>
 
@@ -101,32 +292,41 @@
               <div class="avatar">CR</div>
               <div>
                 <strong>Carlos Ruiz</strong>
-                <small>Zona Norte</small>
+                <small>Zona Norte · 8 entregas hoy</small>
               </div>
             </div>
-            <span class="pill active">Activo</span>
+            <div class="worker-right">
+              <span class="worker-score">94%</span>
+              <span class="pill active">Activo</span>
+            </div>
           </div>
 
           <div class="worker">
             <div class="worker-left">
-              <div class="avatar">LM</div>
+              <div class="avatar secondary">LM</div>
               <div>
                 <strong>Luisa Mora</strong>
-                <small>Centro</small>
+                <small>Centro · 11 entregas hoy</small>
               </div>
             </div>
-            <span class="pill active">Activo</span>
+            <div class="worker-right">
+              <span class="worker-score">97%</span>
+              <span class="pill active">Activo</span>
+            </div>
           </div>
 
           <div class="worker">
             <div class="worker-left">
-              <div class="avatar">PG</div>
+              <div class="avatar danger">PG</div>
               <div>
                 <strong>Pedro Gil</strong>
-                <small>Zona Sur</small>
+                <small>Zona Sur · sin conexión reciente</small>
               </div>
             </div>
-            <span class="pill off">Inactivo</span>
+            <div class="worker-right">
+              <span class="worker-score low">61%</span>
+              <span class="pill off">Inactivo</span>
+            </div>
           </div>
         </div>
       </section>

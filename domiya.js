@@ -2,6 +2,8 @@ const ownerName = document.getElementById("ownerName");
 const logoutBtn = document.getElementById("logoutBtn");
 const menuButtons = document.querySelectorAll(".menu-btn");
 const sections = document.querySelectorAll(".panel-section");
+const liveStatus = document.getElementById("liveStatus");
+const mapUpdatedAt = document.getElementById("mapUpdatedAt");
 
 function showSection(sectionId) {
   sections.forEach((section) => {
@@ -9,7 +11,9 @@ function showSection(sectionId) {
   });
 
   menuButtons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.section === sectionId);
+    const isActive = button.dataset.section === sectionId;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-current", isActive ? "page" : "false");
   });
 }
 
@@ -25,6 +29,25 @@ logoutBtn.addEventListener("click", () => {
   window.location.href = "login.html";
 });
 
+function startLiveClock() {
+  let seconds = 10;
+
+  updateStatus(seconds);
+
+  setInterval(() => {
+    seconds += 5;
+    if (seconds >= 60) seconds = 5;
+    updateStatus(seconds);
+  }, 5000);
+}
+
+function updateStatus(seconds) {
+  const text = `Actualizado hace ${seconds} s`;
+
+  if (liveStatus) liveStatus.textContent = text;
+  if (mapUpdatedAt) mapUpdatedAt.textContent = text;
+}
+
 window.addEventListener("load", () => {
   const isLogged = localStorage.getItem("domiyaAuth");
   const savedUser = localStorage.getItem("domiyaUser");
@@ -36,4 +59,5 @@ window.addEventListener("load", () => {
 
   ownerName.textContent = savedUser || "Dueño";
   showSection("resumen");
+  startLiveClock();
 });
