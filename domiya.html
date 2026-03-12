@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel | Domiya</title>
+  <link rel="stylesheet" href="domiya.css" />
+  <script src="domiya.js" defer></script>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <img src="logodomiya.jpg" alt="Logo Domiya" class="sidebar-logo" />
+        <h2>DOMIYA</h2>
+        <p>Panel de dueños</p>
+      </div>
+
+      <nav class="menu">
+        <button class="menu-btn active" data-section="resumen">Resumen</button>
+        <button class="menu-btn" data-section="mapa">Mapa</button>
+        <button class="menu-btn" data-section="personal">Personal</button>
+      </nav>
+
+      <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Operación en tiempo real</p>
+          <h1>Hola, <span id="ownerName">Dueño</span></h1>
+        </div>
+      </header>
+
+      <section id="resumen" class="panel-section active">
+        <div class="hero-card">
+          <small>Estado general</small>
+          <h3>Todo bajo control</h3>
+          <p>
+            Revisa rápidamente quién está activo, cuántas zonas están cubiertas
+            y entra al mapa operativo.
+          </p>
+        </div>
+
+        <div class="stats">
+          <div class="card stat-card">
+            <strong>12</strong>
+            <span>Activos</span>
+          </div>
+          <div class="card stat-card">
+            <strong>4</strong>
+            <span>En pausa</span>
+          </div>
+          <div class="card stat-card">
+            <strong>3</strong>
+            <span>Zonas</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="mapa" class="panel-section">
+        <div class="card map-card">
+          <div class="section-head">
+            <h3>Mapa operativo</h3>
+            <span class="chip">Actualizado hace 10 s</span>
+          </div>
+
+          <div class="fake-map">
+            <div class="road road-1"></div>
+            <div class="road road-2"></div>
+            <div class="road road-3"></div>
+
+            <div class="pin pin-1">
+              <span></span>
+              <label>Carlos</label>
+            </div>
+
+            <div class="pin pin-2">
+              <span></span>
+              <label>Luisa</label>
+            </div>
+
+            <div class="pin pin-3 offpin">
+              <span></span>
+              <label>Pedro</label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="personal" class="panel-section">
+        <div class="card">
+          <div class="section-head">
+            <h3>Personal conectado</h3>
+            <span class="chip">12 activos</span>
+          </div>
+
+          <div class="worker">
+            <div class="worker-left">
+              <div class="avatar">CR</div>
+              <div>
+                <strong>Carlos Ruiz</strong>
+                <small>Zona Norte</small>
+              </div>
+            </div>
+            <span class="pill active">Activo</span>
+          </div>
+
+          <div class="worker">
+            <div class="worker-left">
+              <div class="avatar">LM</div>
+              <div>
+                <strong>Luisa Mora</strong>
+                <small>Centro</small>
+              </div>
+            </div>
+            <span class="pill active">Activo</span>
+          </div>
+
+          <div class="worker">
+            <div class="worker-left">
+              <div class="avatar">PG</div>
+              <div>
+                <strong>Pedro Gil</strong>
+                <small>Zona Sur</small>
+              </div>
+            </div>
+            <span class="pill off">Inactivo</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
